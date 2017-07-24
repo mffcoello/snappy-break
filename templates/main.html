@@ -21,18 +21,102 @@
  <script src= "javascript/main.js"></script>
 <br>
 <body>
-
     <h1>BREAK IT!</h1>
         <br>
-        <button class= "button" type="button">Click Me!</button>
-
+        <p id="intro"> I know you don’t want to take a break right now. Why? Because you’re too busy.
+        The trouble is that, without any downtime to refresh and recharge, we’re less efficient,
+        make more mistakes, and get less engaged with what we’re doing.  It is discovered that
+        there’s power of taking breaks at work.  A study found it made people happier, more
+        focused and more productive.  Breaks keep us from getting bored, feel unfocused, zoned
+        out or even irritable. The human brain just wasn’t built for the extended focus we ask
+        of it these days. Our main goal is to provide you a way to relieve stress throughout your
+         workday by offering you links to games, articles, videos, and memes at times when you’re
+         not busy based on your Google Calendar. </p>
     <div class="bio">
-        <p>
+        <p> PLEASE JUST TAKE A BREAK!
         </p>
 </div>
-</body>
+<head>
+<style>
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
 
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
 
+div.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+}
+</style>
+</head>
+<body>
+
+<h2>More Info</h2>
+
+<button class="accordion">Statistics</button>
+<div class="panel">
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</div>
+<br> <br>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    }
+}
+</script>
 <style type="text/css">body, a:hover {cursor: url(http://cur.cursors-4u.net/mechanics/mec-1/mec1.ani), url(http://cur.cursors-4u.net/mechanics/mec-1/mec1.png), progress;}</style>
 <a href="http://www.cursors-4u.com/cursor/2005/04/21/mec1-95.html" target="_blank" title="Ticking Clock">
     <img src="http://cur.cursors-4u.net/cursor.png" border="0" alt="Ticking Clock" style="position:absolute; top: 0px; right: 0px;" /></a>
