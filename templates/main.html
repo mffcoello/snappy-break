@@ -25,21 +25,12 @@
 <body>
     <h1>BREAK IT!</h1>
         <br>
-        <p id="intro"> I know you don’t want to take a break right now. Why? Because you’re too busy.
-        The trouble is that, without any downtime to refresh and recharge, we’re less efficient,
-        make more mistakes, and get less engaged with what we’re doing.  It is discovered that
-        there’s power of taking breaks at work.  A study found it made people happier, more
-        focused and more productive.  Breaks keep us from getting bored, feel unfocused, zoned
-        out or even irritable. The human brain just wasn’t built for the extended focus we ask
-        of it these days. Our main goal is to provide you a way to relieve stress throughout your
-         workday by offering you links to games, articles, videos, and memes at times when you’re
-         not busy based on your Google Calendar. </p>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
         <meta name="google-signin-client_id" content="872407350122-lpgqsuvleum7fqq6tukbnush5qav5ea8.apps.googleusercontent.com">
-
     <div class="bio">
         <p> PLEASE JUST TAKE A BREAK!
         </p>
+        <br>
 </div>
 <head>
 <style>
@@ -71,6 +62,18 @@ div.panel {
 
 <h2>More Info</h2>
 
+<button class="accordion">About Us</button>
+<div class="panel">
+  <p id="intro"> I know you don’t want to take a break right now. Why? Because you’re too busy.
+        The trouble is that, without any downtime to refresh and recharge, we’re less efficient,
+        make more mistakes, and get less engaged with what we’re doing.  It is discovered that
+        there’s power of taking breaks at work.  A study found it made people happier, more
+        focused and more productive.  Breaks keep us from getting bored, feel unfocused, zoned
+        out or even irritable. The human brain just wasn’t built for the extended focus we ask
+        of it these days. Our main goal is to provide you a way to relieve stress throughout your
+         workday by offering you links to games, articles, videos, and memes at times when you’re
+         not busy based on your Google Calendar. </p>
+</div>
 <button class="accordion">Statistics</button>
 <div class="panel">
   <head>
@@ -104,8 +107,10 @@ div.panel {
     <div id="piechart" style="width: 900px; height: 500px;"></div>
   </body>
 </div>
-<br> <br>
+</div>
 
+<br> <br>
+<br><br>
 <script>
 var acc = document.getElementsByClassName("accordion");
 var i;
