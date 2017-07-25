@@ -30,7 +30,7 @@ decorator = OAuth2Decorator(
     scope='https://www.googleapis.com/auth/calendar.readonly')
 
 service = build('calendar', 'v3')
-
+email= "mffcoello@gmail.com"
 
 class homePage(webapp2.RequestHandler):
     def get(self):
@@ -46,10 +46,16 @@ class calendarHandler(webapp2.RequestHandler):
         response = request.execute(http=http)
         self.response.write("%s" % response["items"])
 
+class calendarPage(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template('calendar.html')
+        params = {"email": email}
+        self.response.write(template.render(params))
 
 
 app = webapp2.WSGIApplication([
     ('/', homePage),
     ('/event', calendarHandler),
     (decorator.callback_path, decorator.callback_handler()),
+    ('/calendarPage', calendarPage)
 ], debug=True)
