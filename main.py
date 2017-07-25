@@ -19,8 +19,18 @@ import webapp2
 import os
 from google.appengine.ext import ndb
 from datetime import datetime
+from oauth2client.contrib.appengine import OAuth2Decorator
+from apiclient.discovery import build
+
 
 env=jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
+decorator = OAuth2Decorator(
+    client_id="872407350122-lpgqsuvleum7fqq6tukbnush5qav5ea8.apps.googleusercontent.com",
+    client_secret="NHaw6gqhfK6HtoQrhYX_idGm",
+    scope='https://www.googleapis.com/auth/calendar.readonly')
+
+service = build('calendar', 'v3')
+
 
 class homePage(webapp2.RequestHandler):
     def get(self):
@@ -28,7 +38,13 @@ class homePage(webapp2.RequestHandler):
         self.response.write(template.render())
 
 class MainHandler(webapp2.RequestHandler):
+    @decorator.oauth_required
     def get(self):
+        http = decorator.http()
+        # Call the service using the authorized Http object.
+        request = service.events().list(calendarId='primary')
+        response = request.execute(http=http)
+        self.response.write("%s" % response["items"])
         query = Event.query()
         query.order(Event.day)
         events = sorted(query.fetch())
@@ -69,6 +85,7 @@ class Event(ndb.Model):
 app = webapp2.WSGIApplication([
     ('/', homePage),
     ('/event', MainHandler),
+    (decorator.callback_path, decorator.callback_handler()),
     ('/confirmation', confirmationHandler),
     ('/newEvents', newEvents)
 ], debug=True)
