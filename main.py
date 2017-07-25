@@ -14,19 +14,61 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-import webapp2
 import jinja2
-
-
+import webapp2
+import os
+from google.appengine.ext import ndb
+from datetime import datetime
 
 env=jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
 
+class homePage(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template('homePage.html')
+        self.response.write(template.render())
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        query = Event.query()
+        query.order(Event.day)
+        events = sorted(query.fetch())
         template = env.get_template('main.html')
+        self.response.write(template.render({'events': events}))
+class newEvents(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template('new-event.html')
         self.response.write(template.render())
+
+class confirmationHandler(webapp2.RequestHandler):
+    def post(self):
+        template = env.get_template('confirmation.html')
+        self.response.write(template.render({
+        'day': self.request.get('day'),
+        'time': self.request.get('time'),
+        'venue': self.request.get('venue'),
+        'date': self.request.get('date')
+        }))
+
+        date_string = self.request.get('date')
+
+        event = Event(
+            day = self.request.get('day'),
+            time = self.request.get('time'),
+            venue = self.request.get('venue'),
+            date = datetime.strptime( date_string , "%Y-%m-%d" )
+        )
+        event.put()
+
+class Event(ndb.Model):
+    date = ndb.DateProperty()
+    day = ndb.StringProperty()
+    time = ndb.StringProperty()
+    venue = ndb.StringProperty()
 
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', homePage),
+    ('/event', MainHandler),
+    ('/confirmation', confirmationHandler),
+    ('/newEvents', newEvents)
 ], debug=True)
