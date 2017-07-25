@@ -37,7 +37,7 @@ class homePage(webapp2.RequestHandler):
         template = env.get_template('homePage.html')
         self.response.write(template.render())
 
-class MainHandler(webapp2.RequestHandler):
+class calendarHandler(webapp2.RequestHandler):
     @decorator.oauth_required
     def get(self):
         http = decorator.http()
@@ -45,47 +45,11 @@ class MainHandler(webapp2.RequestHandler):
         request = service.events().list(calendarId='primary')
         response = request.execute(http=http)
         self.response.write("%s" % response["items"])
-        query = Event.query()
-        query.order(Event.day)
-        events = sorted(query.fetch())
-        template = env.get_template('main.html')
-        self.response.write(template.render({'events': events}))
-class newEvents(webapp2.RequestHandler):
-    def get(self):
-        template = env.get_template('new-event.html')
-        self.response.write(template.render())
 
-class confirmationHandler(webapp2.RequestHandler):
-    def post(self):
-        template = env.get_template('confirmation.html')
-        self.response.write(template.render({
-        'day': self.request.get('day'),
-        'time': self.request.get('time'),
-        'venue': self.request.get('venue'),
-        'date': self.request.get('date')
-        }))
-
-        date_string = self.request.get('date')
-
-        event = Event(
-            day = self.request.get('day'),
-            time = self.request.get('time'),
-            venue = self.request.get('venue'),
-            date = datetime.strptime( date_string , "%Y-%m-%d" )
-        )
-        event.put()
-
-class Event(ndb.Model):
-    date = ndb.DateProperty()
-    day = ndb.StringProperty()
-    time = ndb.StringProperty()
-    venue = ndb.StringProperty()
 
 
 app = webapp2.WSGIApplication([
     ('/', homePage),
-    ('/event', MainHandler),
+    ('/event', calendarHandler),
     (decorator.callback_path, decorator.callback_handler()),
-    ('/confirmation', confirmationHandler),
-    ('/newEvents', newEvents)
 ], debug=True)
