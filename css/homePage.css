@@ -10,8 +10,7 @@ h1{
     color: lightblue;
     font-style:bold;
     font-family: 'Raleway', sans-serif , bold;
-    font-size: 250px;
-    padding: inherit 20px;
+    font-size: 150px;
     text-align: center;
     text-shadow: 2px 2px lightpink;
 
@@ -21,44 +20,51 @@ h1{
     text-align: center;
     margin-left: 250px;
     margin-right: 250px;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+
 
 }
 
 #piechart_3d{
-    float:left;
+    float:center;
 
 }
-
-/*.bio {
+button {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 200px;
+    border: none;
     text-align: center;
-    column-count: 2;
-    column-width: 50%;
-    float:left;
-    padding: 10%;
-    font-family: 'Indie Flower',cursive;
-    font-size: 20px;
-    align-content: center;
+    font-family: 'Raleway', sans-serif;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
 
-}*/
+button.active {
+    background-color: lightblue;
+}
+button:hover{
+    background-color: pink;
+}
+div.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+}
 
 
 .bio {
     width:50%;
     text-align: center;
-    font-family: 'Indie Flower',cursive;
+    font-family: 'Raleway', sans-serif;
     font-size: 20px;
     margin: 0%auto;
 
 }
-
-
-/*img.center {
-    display: block;
-    margin: 0 auto;
-    width: 150px;
-    height: 150px;
-}
-*/
 .main-header {
   text-align: center;
 }
@@ -69,14 +75,5 @@ h1{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-}
-
-
-.heading1{
-    height: 25%;
-    float: inherit;
-    text-align: center;
-    font-size: 30px;
-
+    height: 30%;
 }

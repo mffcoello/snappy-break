@@ -1,66 +1,42 @@
 <!DOCTYPE html>
-
-    <html>
-        <head>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-             <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-                <style>
-
-                </style>
-            <title>snappy break!</title>
-            <header class="main-header" role="banner">
-                <img id="clock" src="https://media.giphy.com/media/tn8zWeNYA73G0/giphy.gif"  width:"1500" height="600" alt="Banner Image"/>
-
-                <div class="layer"></div>
-                </header>
-            <style>
-
-</style>
-        </head>
- <link type="text/css" rel="stylesheet" href="css/homePage.css">
- <script src= "javascript/main.js"></script>
-<br>
-<body>
-    <h1>BREAK IT!</h1>
-        <br>
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-        <meta name="google-signin-client_id" content="872407350122-lpgqsuvleum7fqq6tukbnush5qav5ea8.apps.googleusercontent.com">
-
-    <div class="bio">
-        <p> PLEASE JUST TAKE A BREAK!
-        </p>
-</div>
+<html>
 <head>
-<style>
-button.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-}
 
-button.accordion.active, button.accordion:hover {
-    background-color: #ddd;
-}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     <script src="https://apis.google.com/js/platform.js" async defer></script>
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-div.panel {
-    padding: 0 18px;
-    display: none;
-    background-color: white;
-}
-</style>
+    <title>snappy break!</title>
+    <h1>SNAPPY BREAK!</h1>
+     <header class="main-header" role="banner">
+     <img id="clock" src="https://media.giphy.com/media/tn8zWeNYA73G0/giphy.gif"  width:"1500" height="600" alt="Banner Image"/>
+     <div class="layer"></div>
+     </header>
+    <link type="text/css" rel="stylesheet" href="css/homePage.css">
+    <script src= "javascript/main.js"></script>
+    <br>
+    <br>
+    <br>
 </head>
 <body>
+    <br>
+    <br>
+        <br>
+    <div class="calendarbutton">
+        <form method="get" action="/calendarPage">
+       <button type="submit">Calendar</button>
+   </div>
+</form>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <meta name="google-signin-client_id" content="872407350122-lpgqsuvleum7fqq6tukbnush5qav5ea8.apps.googleusercontent.com">
+    <div class="bio">
+        <p>
 
-<h2>More Info</h2>
+        </p>
+</div>
+
+<h2 id="title">More Info</h2>
 
 <button class="accordion">About Us</button>
 <div class="panel">
@@ -76,40 +52,9 @@ div.panel {
 </div>
 
 <button class="accordion">Statistics</button>
-<div class="panel">
-  <head>
-      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-      <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-          var data = google.visualization.arrayToDataTable([
-            ['Task', 'Hours per Day'],
-            ['Work',     11],
-            ['Eat',      2],
-            ['Commute',  2],
-            ['Watch TV', 2],
-            ['Sleep',    7]
-          ]);
-
-          var options = {
-            title: 'My Daily Activities'
-          };
-
-          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-          chart.draw(data, options);
-        }
-      </script>
-    </head>
-    <body>
       <div id="piechart" style="width: 900px; height: 500px;"></div>
-    </body>
-  </div>
-  <br> <br>
-
+  <br>
+  <br>
   <script>
   var acc = document.getElementsByClassName("accordion");
   var i;
@@ -126,7 +71,8 @@ div.panel {
       }
   }
   </script>
-</div>
+</body>
+</html>
 
 <style type="text/css">body, a:hover {cursor: url(http://cur.cursors-4u.net/mechanics/mec-1/mec1.ani), url(http://cur.cursors-4u.net/mechanics/mec-1/mec1.png), progress;}</style>
 <a href="http://www.cursors-4u.com/cursor/2005/04/21/mec1-95.html" target="_blank" title="Ticking Clock">

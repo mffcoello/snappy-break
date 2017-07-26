@@ -68,8 +68,7 @@ class calendarPage(webapp2.RequestHandler):
           template = env.get_template('calendar.html')
           params = {"email": email_address}
           self.response.write(template.render(params))
-        else:
-          self.response.write("No Info found. Try Signing in Again")
+        
 
 app = webapp2.WSGIApplication([
     ('/', homePage),
