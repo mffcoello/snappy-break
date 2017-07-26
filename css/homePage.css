@@ -42,6 +42,7 @@ button {
     outline: none;
     font-size: 15px;
     transition: 0.4s;
+    display: block;
 }
 
 button.active {

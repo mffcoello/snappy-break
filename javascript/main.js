@@ -8,9 +8,10 @@ window.setInterval(function() {
    * the authorized user's calendar. If no events are found an
    * appropriate message is printed.
    */
-   var acc = document.getElementsByClassName("accordion");
-   var i;
 
+   function clickButton(){
+       var acc = document.getElementsByClassName("accordion");
+       var i;
    for (i = 0; i < acc.length; i++) {
        acc[i].onclick = function(){
            this.classList.toggle("active");
@@ -21,6 +22,7 @@ window.setInterval(function() {
                panel.style.display = "block";
            }
        }
+   }
    }
    google.charts.load('current', {'packages':['corechart']});
    google.charts.setOnLoadCallback(drawChart);
@@ -44,3 +46,6 @@ window.setInterval(function() {
 
      chart.draw(data, options);
    }
+
+   $(document).ready(clickButton);
+   $(document).ready(drawChart);

@@ -68,7 +68,11 @@ class calendarPage(webapp2.RequestHandler):
           template = env.get_template('calendar.html')
           params = {"email": email_address}
           self.response.write(template.render(params))
-        
+        else:
+            login_url = users.create_login_url('/calendarPage')
+            greeting = '<a href="{}">Sign in</a>'.format(login_url)
+            self.response.write('<html><body>{}</body></html>'.format(greeting))
+
 
 app = webapp2.WSGIApplication([
     ('/', homePage),
