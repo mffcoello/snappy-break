@@ -18,6 +18,7 @@ import jinja2
 import webapp2
 import os
 from google.appengine.ext import ndb
+from google.appengine.api import users
 from datetime import datetime
 from oauth2client.contrib.appengine import OAuth2Decorator
 from apiclient.discovery import build
@@ -30,7 +31,20 @@ decorator = OAuth2Decorator(
     scope='https://www.googleapis.com/auth/calendar.readonly')
 
 service = build('calendar', 'v3')
-email= "mffcoello@gmail.com"
+
+class CssiUser(ndb.Model):
+  """CssiUser stores information about a logged-in user.
+
+  The AppEngine users api stores just a couple of pieces of
+  info about logged-in users: a unique id and their email address.
+
+  If you want to store more info (e.g. their real name, high score,
+  preferences, etc, you need to create a Datastore model like this
+  example).
+  """
+  first_name = ndb.StringProperty()
+  last_name = ndb.StringProperty()
+
 
 class homePage(webapp2.RequestHandler):
     def get(self):
@@ -48,10 +62,14 @@ class calendarHandler(webapp2.RequestHandler):
 
 class calendarPage(webapp2.RequestHandler):
     def get(self):
-        template = env.get_template('calendar.html')
-        params = {"email": email}
-        self.response.write(template.render(params))
-
+        user = users.get_current_user()
+        if user:
+          email_address = user.email()
+          template = env.get_template('calendar.html')
+          params = {"email": email_address}
+          self.response.write(template.render(params))
+      else:
+          self.response.write("No Info found. Try Signing in Again")
 
 app = webapp2.WSGIApplication([
     ('/', homePage),
