@@ -24,6 +24,11 @@ function randomVideos(){
   'https://www.youtube.com/embed/nlYlNF30bVg',
   'https://www.youtube.com/embed/XTLZA8zBzzc',
   'https://www.youtube.com/embed/GzgavGowD_A?list=PL7XlqX4npddfrdpMCxBnNZXg2GFll7t5y',
+  'https://www.youtube.com/embed/JAFQFvSPhQ8',
+  'https://www.youtube.com/embed/PFkzSfRFiMU',
+  'https://www.youtube.com/embed/8hsWnvwIJWA',
+  'https://www.youtube.com/embed/ANhHNQWF4Ko',
+  'https://www.youtube.com/embed/msQAEESy5QU',
 
   ];
   document.getElementById('iframe').src = videos[Math.floor(Math.random()*videos.length)];
@@ -42,6 +47,10 @@ function randomMemes(){
  'https://giphy.com/embed/mlmLiWSSgL6eY',
  'https://giphy.com/embed/l0Exk8EUzSLsrErEQ',
  'https://giphy.com/embed/uAtUk9luIYL1C',
+ 'https://giphy.com/embed/aJANJbr9PLzQ4',
+ 'https://giphy.com/embed/l0MYMmf2B8XYk1xx6',
+ 'https://giphy.com/embed/11SdI0nBdFdH4k',
+ 'https://giphy.com/embed/ONxu4fOmOkAb6',
 
 ];
  document.getElementById('iframe').src = memes[Math.floor(Math.random()*memes.length)];
