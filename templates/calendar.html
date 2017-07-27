@@ -23,5 +23,36 @@ An &#105;frame should be displayed here but your browser version does not suppor
 <!-- <script src= "javascript/main.js"></script> -->
 <iframe class= "looks" src="https://www.google.com/calendar/embed?src={{email}}" style="border: 0" frameborder="0" scrolling="no"></iframe>
 </body>
+<!-- this is the code for the need a break button -->
+
+<link type="text/css" rel="stylesheet" href="css/calendar.css">
+
+<body>
+  <!-- Trigger/Open The Modal -->
+  <button id="myBtn">Need A Break</button>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content" id="pop">
+      <span class="close">&times;</span>
+      <p>
+    <input id="videos" type="radio" name="pop-up" value="videos" checked> Videos<br>
+    <input id="memes" type="radio" name="pop-up" value="memes"> Memes<br>
+    <br>
+    <input type="submit" value="Submit" onclick="showdiv()">
+      </p>
+    </div>
+    <div class="modal-content" id="vid">
+      <span class="close">&times;</span>
+      <iframe width="615" height="860" id="iframe" src="" frameborder="0" allowfullscreen></iframe>
+</div>
+
+  </div>
+
+</body>
+<script src= "javascript/test.js"></script>
+<script src= "javascript/pop-up.js"></script>
+
 
 </html>
