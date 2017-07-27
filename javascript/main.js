@@ -34,16 +34,15 @@ $(document).ready(setup2);
    function drawChart() {
 
      var data = google.visualization.arrayToDataTable([
-       ['Task', 'Hours per Day'],
-       ['Work',     11],
-       ['Eat',      2],
-       ['Commute',  2],
-       ['Watch TV', 2],
-       ['Sleep',    7]
+       ['Reason of Stress', 'Percentage'],
+       ['Lack of Job Security',  6],
+       ['Workload', 46],
+       ['People Issues', 28],
+       ['Juggling Work/Personal Life', 20],
      ]);
 
      var options = {
-       title: 'My Daily Activities'
+       title: 'Reasons for Stress at the Workplace'
      };
 
      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
