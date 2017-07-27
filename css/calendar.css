@@ -1,8 +1,40 @@
 .looks{
 
- width: 80%;
+ width: 100%;
  height: 80%;
 
+}
+#memes, #videos, #submit{
+    width: 25%;
+    height: 5%;
+    font-size: 30px;
+    text-align: center;
+}
+button, #myBtn {
+    background-color: lightblue;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    height: 20%;
+    border: none;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+    display: block;
+}
+
+button.active, #myBtn.active {
+    background-color: lightblue;
+}
+button:hover, #myBtn:hover{
+    background-color: pink;
+}
+div.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
 }
 
 table {
@@ -13,7 +45,7 @@ table {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 15%; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */

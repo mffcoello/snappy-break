@@ -73,10 +73,15 @@ class calendarPage(webapp2.RequestHandler):
             greeting = '<a href="{}">Sign in</a>'.format(login_url)
             self.response.write('<html><body>{}</body></html>'.format(greeting))
 
+class distress(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template('distress.html')
+        self.response.write(template.render())
 
 app = webapp2.WSGIApplication([
     ('/', homePage),
     ('/event', calendarHandler),
     (decorator.callback_path, decorator.callback_handler()),
-    ('/calendarPage', calendarPage)
+    ('/calendarPage', calendarPage),
+    ('/distress', distress)
 ], debug=True)
