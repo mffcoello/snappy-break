@@ -11,12 +11,6 @@ function showdiv() {
 
 }
 function randomVideos(){
-<<<<<<< HEAD
-  var videos = ['https://www.youtube.com/embed/3v5HZTwFBCs',
-  'https://www.youtube.com/embed/CTFtOOh47oo',
-  'https://www.youtube.com/embed/by3yRdlQvzs',
-  "https://www.youtube.com/embed/ALqFFeU-Wp8"];
-=======
   var videos = ['//www.funnyordie.com/embed/aaa7d6bd99',
   '//www.funnyordie.com/embed/74dd9afee2',
   'https://www.youtube.com/embed/jil0WCh_UoQ',
@@ -29,9 +23,9 @@ function randomVideos(){
   'https://www.youtube.com/embed/4IRdw_Qgwqc',
   'https://www.youtube.com/embed/nlYlNF30bVg',
   'https://www.youtube.com/embed/XTLZA8zBzzc',
+  'https://www.youtube.com/embed/GzgavGowD_A?list=PL7XlqX4npddfrdpMCxBnNZXg2GFll7t5y',
 
   ];
->>>>>>> 075668b2a31215fa19c75664bfb9439ff039ab98
   document.getElementById('iframe').src = videos[Math.floor(Math.random()*videos.length)];
 
 
