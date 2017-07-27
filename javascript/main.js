@@ -2,28 +2,32 @@ window.setInterval(function() {
   $( "#clock" ).effect( "shake" );
 }, 600);
 
+function clickAction(){
+$('.panel').toggle(100)
 
-/**
-   * Print the summary and start datetime/date of the next ten events in
-   * the authorized user's calendar. If no events are found an
-   * appropriate message is printed.
-   */
 
-   function clickButton(){
-       var acc = document.getElementsByClassName("accordion");
-       var i;
-   for (i = 0; i < acc.length; i++) {
-       acc[i].onclick = function(){
-           this.classList.toggle("active");
-           var panel = this.nextElementSibling;
-           if (panel.style.display === "block") {
-               panel.style.display = "none";
-           } else {
-               panel.style.display = "block";
-           }
-       }
-   }
-   }
+}
+
+function setup(){
+    $('.aboutus').on('click' , clickAction);
+    $('.panel').hide()
+}
+
+function clickAction2(){
+$('.stats').toggle(100)
+}
+
+function setup2(){
+    $('.statsbutton').on('click' , clickAction2);
+    $('.stats').hide()
+}
+
+
+$(document).ready(setup);
+$(document).ready(setup2);
+
+
+
    google.charts.load('current', {'packages':['corechart']});
    google.charts.setOnLoadCallback(drawChart);
 
@@ -46,6 +50,3 @@ window.setInterval(function() {
 
      chart.draw(data, options);
    }
-
-   $(document).ready(clickButton);
-   $(document).ready(drawChart);

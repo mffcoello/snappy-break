@@ -6,6 +6,11 @@ body{
     background-repeat: no-repeat;
 }
 
+img {
+    display: block;
+    margin: 0 auto;
+}
+
 h1{
     color: lightblue;
     font-style:bold;
@@ -16,7 +21,7 @@ h1{
 
 }
 
-#intro {
+.panel {
     text-align: center;
     margin-left: 250px;
     margin-right: 250px;
@@ -26,21 +31,18 @@ h1{
 
 }
 
-#piechart_3d{
-    float:center;
 
-}
+
 button {
-    background-color: #eee;
-    color: #444;
+    background-color: white;
     cursor: pointer;
     padding: 18px;
-    width: 200px;
+    width: 100%;
     border: none;
     text-align: center;
     font-family: 'Raleway', sans-serif;
     outline: none;
-    font-size: 15px;
+    font-size: 20px;
     transition: 0.4s;
     display: block;
 }
@@ -58,23 +60,11 @@ div.panel {
 }
 
 
-.bio {
-    width:50%;
-    text-align: center;
-    font-family: 'Raleway', sans-serif;
-    font-size: 20px;
-    margin: 0%auto;
-
-}
-.main-header {
-  text-align: center;
-}
-
 .layer {
     background-color: rgba(26, 164, 249, .2);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 30%;
+    height: 200px;
 }
