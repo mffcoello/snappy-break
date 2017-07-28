@@ -4,16 +4,29 @@
  height: 80%;
 
 }
-#memes, #videos, #submit{
-    width: 25%;
-    height: 5%;
-    font-size: 30px;
-    text-align: center;
+table , th, td {
+    width: 50%;
+    margin: 0%auto;
+    padding: 5%auto;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
 }
-button, #myBtn {
+#submit {
     background-color: lightblue;
     cursor: pointer;
-    padding: 18px;
+    width: 100%;
+    height: 4%;
+    border: none;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+    display: block;
+}
+#myBtn{
+    background-color: lightblue;
+    cursor: pointer;
     width: 100%;
     height: 20%;
     border: none;
@@ -24,11 +37,11 @@ button, #myBtn {
     transition: 0.4s;
     display: block;
 }
-
-button.active, #myBtn.active {
+}
+button.active, #myBtn.active, #submit.active{
     background-color: lightblue;
 }
-button:hover, #myBtn:hover{
+button:hover, #myBtn:hover, #submit:hover{
     background-color: pink;
 }
 div.panel {
@@ -37,15 +50,12 @@ div.panel {
     background-color: white;
 }
 
-table {
-    color: pink;
-}
 /* The Modal (background) */
 .modal{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 15%; /* Location of the box */
+    padding-top: 20%; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -79,4 +89,26 @@ table {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+#needbreak{
+        color: #98ffcc;
+        font-style:bold;
+        font-family: 'Raleway', sans-serif , bold;
+        font-size: 150px;
+        text-align: center;
+        text-shadow: 2px 2px #cc98ff;
+
+    }
+#videos, h1{
+        color: #98ffcc;
+        font-style:bold;
+        font-family: 'Raleway', sans-serif , bold;
+        font-size: 25px;
+        text-align: left;
+        text-shadow: 2px 2px lightpink;
+
+
+    }
 }

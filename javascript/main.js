@@ -14,17 +14,18 @@ function setup(){
 }
 
 function clickAction2(){
-$('.stats').toggle(100)
+$('.statTextNpiechart').toggle(100)
 }
 
 function setup2(){
     $('.statsbutton').on('click' , clickAction2);
-    $('.stats').hide()
+    $('.statTextNpiechart').hide()
 }
 
 
 $(document).ready(setup);
 $(document).ready(setup2);
+
 
 
 
@@ -42,10 +43,14 @@ $(document).ready(setup2);
      ]);
 
      var options = {
-       title: 'Reasons for Stress at the Workplace'
+       title: 'Reasons for Stress at the Workplace' ,
+     width: 600 ,
+     height: 600,
+
      };
 
      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
      chart.draw(data, options);
+
    }
